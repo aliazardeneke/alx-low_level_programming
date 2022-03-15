@@ -1,56 +1,43 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
- * print_times_table - prints times table for numbers from 0-14
- * @n: An input integer value
- * Return: Nothing
+ * main - sums 3-5_cous - Entry point
+ *
+ * Return:  (0)
  */
-void print_times_table(int n)
-{
-	int i, j;
 
-	if (n > 0 && n < 15)
+int main(void)
+{
+	int i = 0;
+	int m3 = 3;
+	int m5 = 5;
+	int sum = 0;
+	int lim = 1024;
+
+	while (i == 0)
 	{
-		for (i = 0; i <= n; i++)
+
+		if (m3 < lim)
 		{
-			_putchar('0');
-			for (j = 1; j <= n; j++)
-				putformat(i * j);
-			_putchar('\n');
+			sum += m3;
+			m3 += 3;
+		}
+
+		if (m5 < lim && (m5 % 3) != 0)
+		{
+			sum += m5;
+			m5 += 5;
+		}
+		else if (m5 % 3 == 0)
+		{
+			m5 += 5;
+		}
+
+		if (m3 >= lim && m5 >= lim)
+		{
+			i = 1;
 		}
 	}
-}
-
-/**
- * putformat - formatted characters to output
- * @n: number to format
- * Return: nothing
- */
-void putformat(int n)
-{
-	if (n <= 9)
-	{
-		_putchar(',');
-		_putchar(' ');
-		_putchar(' ');
-		_putchar(' ');
-		_putchar(n + '0');
-	}
-	else if (n > 9 && n <= 99)
-	{
-		_putchar(',');
-		_putchar(' ');
-		_putchar(' ');
-		_putchar(n / 10 + '0');
-		_putchar(n % 10 + '0');
-	}
-	else
-	{
-		_putchar(',');
-		_putchar(' ');
-		_putchar(n / 100 + '0');
-		_putchar(n / 10 % 10 + '0');
-		_putchar(n % 10 + '0');
-	}
+	printf("%d\n", sum);
+	return (0);
 }
