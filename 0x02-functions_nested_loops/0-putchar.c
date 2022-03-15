@@ -9,13 +9,11 @@
 
 int main(void)
 {
-	char *sh = "_putchar";
+	char word[9] = "_putchar";
+	int i;
 
-	while (*sh)
-	{
-		_putchar(*sh);
-		sh++;
-	}
+	for (i = 0; i < 9; i++)
+		_putchar(word[i]);
 	_putchar('\n');
 
 	return (0);
