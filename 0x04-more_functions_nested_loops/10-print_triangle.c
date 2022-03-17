@@ -1,31 +1,37 @@
 #include "main.h"
 
-/**
- * print_triangle - a function that prints a triangle
- * @size: size of the triangle
- * Return: triangle of '#'s
- */
-void print_triangle(int size)
-{
-	int sp, ro, tr;
+void print_integer(int m);
 
-	if (size <= 0)
+/**
+ * print_number - a function that prints an integer.
+ * @n: An input integer
+ * Return: Nothing
+ */
+void print_number(int n)
+{
+	if (n == 0)
+		_putchar('0');
+	else if (n < 0)
 	{
-		_putchar('\n');
+		_putchar('-');
+		print_integer(n * -1);
 	}
 	else
-	{
-		for (ro = 0; ro <= (size - 1); ro++)
+		print_integer(n);
+}
+
+/**
+ * print_integer - A function to priting n
+ * @m: an input unsigned integer
+ * Return: Nothing
+ */
+void print_integer(int m)
+{
+	int i = 1000000000;
+
+	for (; i >= 1; i /= 10)
+		if (m / i != 0)
 		{
-			for (sp = 0; sp < (size - 1) - ro; sp++)
-			{
-				_putchar(' ');
-			}
-			for (tr = 0; tr <= ro; tr++)
-			{
-				_putchar('#');
-			}
-			_putchar('\n');
+			_putchar((m / i) % 10 + '0');
 		}
-	}
 }
