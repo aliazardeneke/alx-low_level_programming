@@ -1,37 +1,43 @@
-#include "main.h"
-
-void print_integer(int m);
+#include <stdio.h>
 
 /**
- * print_number - a function that prints an integer.
- * @n: An input integer
- * Return: Nothing
+ * main - sums 3-5_cous - Entry point
+ *
+ * Return:  (0)
  */
-void print_number(int n)
+
+int main(void)
 {
-	if (n == 0)
-		_putchar('0');
-	else if (n < 0)
+	int i = 0;
+	int m3 = 3;
+	int m5 = 5;
+	int sum = 0;
+	int lim = 1024;
+
+	while (i == 0)
 	{
-		_putchar('-');
-		print_integer(n * -1);
-	}
-	else
-		print_integer(n);
-}
 
-/**
- * print_integer - A function to priting n
- * @m: an input unsigned integer
- * Return: Nothing
- */
-void print_integer(int m)
-{
-	int i = 1000000000;
-
-	for (; i >= 1; i /= 10)
-		if (m / i != 0)
+		if (m3 < lim)
 		{
-			_putchar((m / i) % 10 + '0');
+			sum += m3;
+			m3 += 3;
 		}
+
+		if (m5 < lim && (m5 % 3) != 0)
+		{
+			sum += m5;
+			m5 += 5;
+		}
+		else if (m5 % 3 == 0)
+		{
+			m5 += 5;
+		}
+
+		if (m3 >= lim && m5 >= lim)
+		{
+			i = 1;
+		}
+	}
+	printf("%d\n", sum);
+	return (0);
 }
