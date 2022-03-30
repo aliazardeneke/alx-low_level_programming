@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code
  *
  * Return: Always 0.
  */
 int main(void)
 {
-  _puts_recursion("Betty Holberton");
-  return (0);
+    _puts_recursion("Puts with recursion");
+    return (0);
 }
