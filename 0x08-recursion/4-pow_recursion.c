@@ -1,4 +1,5 @@
-#include "holberton.h"
+#include "main.h"
+#include <stdio.h>
 
 /**
  * _pow_recursion - It returns the value of x raised to the power y.
