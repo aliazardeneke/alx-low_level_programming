@@ -1,1 +1,1 @@
-This is my static library project 
+ALX static lib
