@@ -1,28 +1,41 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-
 /**
- * main - Check the code
- * @argc: number of arguments
- * @argv: arguments
- * Return: Nothing
+ * main - takes two numbers as arguments and outputs the product.
+ * @argc: the number of arguments including name of program.
+ * @argv: an array of arguments
+ *
+ * Return: 0 if successful.
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int num1, num2, result;
-
+	int i;
 	if (argc != 3)
 	{
-		printf("Error\n");
+		for (i = 0; ERR_MSG[i] != '\0'; i++)
+			_putchar(ERR_MSG[i]);
+		_putchar(10);
 		exit(98);
 	}
-	else
+	if (_isdigit(argv[1]) == 0)
+		printf("%s\n", argv[1]);
+		
+	return (0);
+}
+
+/**
+ * isdigit - checks if string is a number or not
+ * @s: the string to be checked
+ *
+ * Return: 1 if true, else 0.
+ */
+
+int _isdigit(char *s)
+{
+	while (*s)
 	{
-		num1 = atoi(argv[1]);
-		num2 = atoi(argv[2]);
-		result = num1 * num2;
-		printf("%d\n", result);
-		return (0);
+		if (*s < 48 || *s > 57)
+			return (1);
+		s++;
 	}
+	return (0);
 }
