@@ -1,3 +1,6 @@
+#include "3-calc.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
 * main - print opcodes of its own main function
 * @argc: number of arguments
